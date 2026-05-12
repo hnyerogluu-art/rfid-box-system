@@ -48,33 +48,31 @@
 <script>
 let count = 0;
 
-function updateStatus() {
+function update() {
   document.getElementById("count").innerText = count;
 
-  let status = "";
-
   if (count === 0) {
-    status = "EMPTY";
-  } else if (count <= 3) {
-    status = "PARTIAL";
-  } else {
-    status = "FULL";
+    document.getElementById("status").innerText = "EMPTY";
+  } 
+  else if (count <= 3) {
+    document.getElementById("status").innerText = "PARTIAL";
+  } 
+  else {
+    document.getElementById("status").innerText = "FULL";
   }
-
-  document.getElementById("status").innerText = status;
 }
 
 function addItem() {
   count++;
-  updateStatus();
+  update();
 }
 
 function reset() {
   count = 0;
-  updateStatus();
+  update();
 }
 
-updateStatus();
+update();
 </script>
 
 </body>
